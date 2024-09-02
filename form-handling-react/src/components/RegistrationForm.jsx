@@ -8,7 +8,7 @@ function RegistrationForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!username.trim() || email.trim() || password.trim()) {
+        if (!username || email || password) {
             setErrors("Please ensure that all fields are filled in!");
             return;
         }
