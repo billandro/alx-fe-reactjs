@@ -8,10 +8,21 @@ function RegistrationForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!username || email || password) {
+        if (!username) {
             setErrors("Please ensure that all fields are filled in!");
             return;
         }
+
+        if (!email) {
+            setErrors("Please ensure that all fields are filled in!");
+            return;
+        }
+
+        if (!password) {
+            setErrors("Please ensure that all fields are filled in!");
+            return;
+        }
+
         setUsername("");
         setEmail("");
         setPassword("");
