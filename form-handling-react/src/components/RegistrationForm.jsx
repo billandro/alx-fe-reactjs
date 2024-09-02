@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 
 function RegistrationForm() {
-    const [userName, setUserName] = useState();
+    const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!userName.trim() || email.trim() || password.trim()) {
+        if (!username.trim() || email.trim() || password.trim()) {
             return;
         }
-        setUserName("");
+        setUsername("");
         setEmail("");
         setPassword("");
     };
@@ -20,8 +20,8 @@ function RegistrationForm() {
             <input 
                 type="text"
                 placeholder="Username"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
             />
             <input 
                 type="email"
