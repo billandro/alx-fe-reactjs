@@ -4,10 +4,12 @@ function RegistrationForm() {
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [errors, setErrors] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!username.trim() || email.trim() || password.trim()) {
+            setErrors("Please ensure that all fields are filled in!");
             return;
         }
         setUsername("");
