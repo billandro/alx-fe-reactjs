@@ -12,9 +12,8 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<Profile />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/*" element={<Profile />} />
           <Route path="/profile-form" element={<ProfileForm />} />
-          <Route path="/profile-details/:id" element={<ProfileDetails />} />
         </Routes>
       </div>
     </Router>
