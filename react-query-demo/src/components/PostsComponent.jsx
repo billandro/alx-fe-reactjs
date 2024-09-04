@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useQuery } from 'react-query';
 
 const fetchPosts = async () => {
@@ -6,29 +6,18 @@ const fetchPosts = async () => {
     return response.json();
 };
 
-import React, { useMemo } from 'react';
-
-const ExpensiveComponent = ({ data }) => {
-    // Use useMemo to cache the result of the expensive computation
-    const computedData = useMemo(() => {
-        // Perform expensive computation
-        return data.reduce((acc, item) => acc + item.value, 0);
-    }, [data]); // Recompute only when data changes
-
-    return <div>Computed Value: {computedData}</div>;
-};
-
 function PostsComponent() {
-    const { data, isError, isLoading } = useQuery('fetchPosts', fetchPosts);
+    const { data, error, isError, isLoading, refetch } = useQuery('fetchPosts', fetchPosts);
 
-    if (isLoading) return <div>Loading...</div>
-    if (isError) return <div>Error Loading data</div>
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>Error loading data: {error.message}</div>;
 
     return (
         <div>
-            {() => data.map(item => {
-                <div key={item.key}>{item.name}</div>
-            })}
+            <button onClick={() => refetch()}>Refetch Posts</button>
+            {data.map(item => (
+                <div style={{ border: "1px solid white" }} key={item.id}>{item.title}</div>
+            ))}
         </div>
     )
 }
