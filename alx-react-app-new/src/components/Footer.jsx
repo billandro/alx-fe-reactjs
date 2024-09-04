@@ -1,7 +1,7 @@
 function Footer() {
     return (
-        <footer>
-            <p style={{ backgroundColor: "green" }}>&copy; 2023 City Lovers</p>
+        <footer style={{backgroundColor: "pink", color: "black"}}>
+            <p>2023 City Lovers</p>
         </footer>
     )
 }
