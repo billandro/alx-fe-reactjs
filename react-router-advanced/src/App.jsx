@@ -19,7 +19,7 @@ function App() {
               <Link to="/profile-form">Add Profile</Link>
             </li>
             <li>
-              <Link to="/blog/1">Blog</Link>
+              <Link to="/blog/:id">Blog</Link>
             </li>
           </ul>
         </nav>
@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<PrivateRoute element={<Profile />} />} />
           <Route path="/profile/*" element={<Profile />} />
           <Route path="/profile-form" element={<ProfileForm />} />
-          <Route path="/blog" element={<BlogPost />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
