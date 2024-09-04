@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link, useParams } from 'react-r
 import Profile from './components/Profile';
 import ProfileForm from './components/ProfileForm';
 import BlogPost from './components/BlogPost';
-import PrivateRoute from './components/PrivateRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 import Login from './components/Login';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<PrivateRoute element={<Profile />} />} />
+          <Route path="/" element={<ProtectedRoute element={<Profile />} />} />
           <Route path="/profile/*" element={<Profile />} />
           <Route path="/profile-form" element={<ProfileForm />} />
           <Route path="/blog/:id" element={<BlogPost />} />

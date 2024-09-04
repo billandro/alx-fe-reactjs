@@ -6,8 +6,8 @@ const isAuthenticated = () => {
 };
 
 // Custom Route component that checks for authentication
-const PrivateRoute = ({ element }) => {
+const ProtectedRoute = ({ element }) => {
     return isAuthenticated() ? element : <Navigate to="/login" replace />;
 };
 
-export default PrivateRoute;
+export default ProtectedRoute;
