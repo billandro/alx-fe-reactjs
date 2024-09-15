@@ -16,7 +16,7 @@ const AddRecipeForm = () => {
         addRecipe({ id: Date.now(), title, description });
         setTitle("");
         setDescription("");
-        navigate("/")
+        navigate("/");
     };
 
     return (
