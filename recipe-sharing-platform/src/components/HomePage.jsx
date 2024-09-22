@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link
 
 function HomePage() {
     const [recipes, setRecipes] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("./data.json");
-                const result = await response.json();
-                setRecipes(result);
-            } catch (error) {
-                console.error("Failed to fetch data", error);
-            }
-            };
-        fetchData();
-      }, []);
+      const fetchData = async () => {
+        try {
+          const response = await fetch("data.json"); // Path to public/data.json
+          const result = await response.json();
+          setRecipes(result);
+        } catch (error) {
+          console.error("Failed to fetch data", error);
+        }
+      };
+      fetchData();
+    }, []);
 
     if (!recipes) return <div>Loading...</div>;
 
