@@ -19,7 +19,7 @@ function HomePage() {
     if (!recipes) return <div>Loading...</div>;
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:grid-cols-2">
           {recipes.map((recipe) => (
             <div key={recipe.id} className="rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
               <img src={recipe.image} alt={recipe.title} className="w-full h-40 object-cover rounded-t-lg" />
