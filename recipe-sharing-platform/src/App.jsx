@@ -1,9 +1,10 @@
 import './index.css'
+import HomePage from './components/HomePage';
 
 function App() {
   return (
     <div>
-      <h1>I am testing out tailwind css!</h1>
+      <HomePage />
     </div>
   );
 }
